@@ -1,0 +1,17 @@
+name: vla_arch
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      # Driver supports CUDA 12.8 -> pin cu128 wheels. The cu128 index stops at torch 2.11;
+      # unpinned, pip picks newer PyPI torch built for cu130, which this driver can't run.
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch==2.11.0+cu128
+      - torchvision==0.26.0+cu128
+      - transformers>=5.17
+      - accelerate
+      - huggingface_hub
+      - pillow
+      - -e .

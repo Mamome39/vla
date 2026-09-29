@@ -1,0 +1,14 @@
+[project]
+name = "vla-arch"
+version = "0.1.0"
+description = "VLA architecture experiments with swappable VL backbones"
+readme = "README.md"
+authors = [
+    { name = "Thiwat Chatkham", email = "thiwat.cha.official@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []  # managed in environment.yml
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
