@@ -20,3 +20,20 @@ bb.chat(images=[[img]], texts=["What is in this image?"])          # text answer
 ```
 
 Try it: `python scripts/smoke_backbone.py`
+
+## Action heads
+
+Map a backbone latent `(B, 2048)` to a trajectory of `num_steps` xy waypoints.
+
+```python
+from vla_arch.heads import FlowMatchingActionHead, MLPActionHead
+
+head = MLPActionHead(in_dim=2048, num_steps=6)
+traj = head(latent)                       # (B, 6, 2)
+loss = head.loss(latent, gt_traj)         # L2 displacement
+
+head = FlowMatchingActionHead(in_dim=2048, num_steps=6, num_samples=3)
+head.fit_normalization(train_traj)        # (N, 6, 2)
+loss = head.loss(latent, gt_traj)         # flow-matching velocity MSE
+trajs = head(latent)                      # (B, 3, 6, 2): one trajectory per noise draw
+```

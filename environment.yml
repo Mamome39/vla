@@ -14,4 +14,7 @@ dependencies:
       - accelerate
       - huggingface_hub
       - pillow
+      - matplotlib
+      - flash-linear-attention  # fast Qwen3.5 linear-attention kernels
+      - causal-conv1d
       - -e .

@@ -8,3 +8,13 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Local machine paths (dataset locations) and run outputs
+.env
+outputs/
+
+# Local-only: dataset loaders and training/eval scripts
+src/vla_arch/data/
+scripts/nuscenes_*.py
+scripts/train_head.py
+scripts/visualize_test.py
