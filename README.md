@@ -19,8 +19,6 @@ feats, mask = bb(images=[[img]], texts=["pick up the red cube"])   # (B, T, 2048
 bb.chat(images=[[img]], texts=["What is in this image?"])          # text answers
 ```
 
-Try it: `python scripts/smoke_backbone.py`
-
 ## Action heads
 
 Map a backbone latent `(B, 2048)` to a trajectory of `num_steps` xy waypoints.
