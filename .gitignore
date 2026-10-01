@@ -11,7 +11,9 @@ wheels/
 
 # Local machine paths (dataset locations) and run outputs
 .env
-outputs/
+outputs/**
+!outputs/**/
+!outputs/**/*.png
 
 # Local-only: dataset loaders and training/eval scripts
 src/vla_arch/data/
